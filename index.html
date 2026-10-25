@@ -58,7 +58,7 @@ nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
 nav a{display:block;padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem}
 nav a:hover{background:var(--band);color:var(--blue)}
 .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
-@media (max-width:900px){
+@media (max-width:1180px){
   .menu-btn{display:block}
   nav{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line)}
   nav ul{flex-direction:column;padding:8px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px))}
@@ -163,7 +163,25 @@ nav a:hover{background:var(--band);color:var(--blue)}
 @media (max-width:860px){.about{grid-template-columns:1fr}}
 
 /* CPTS */
-.cpts{margin-top:clamp(40px,6vw,64px);display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(20px,4vw,48px);align-items:center;background:var(--band);border-radius:20px;padding:clamp(22px,4vw,40px)}
+.cpts{margin-top:clamp(40px,6vw,64px);display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(20px,4vw,48px);align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,4vw,40px)}
+
+/* Comprendre */
+.learn{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(20px,4vw,40px);align-items:start}
+.video{margin:0;display:grid;gap:10px;min-width:0}
+.video-poster,.video iframe{display:block;width:100%;aspect-ratio:16/9;max-width:100%;border:0;border-radius:16px;overflow:hidden}
+.video-poster{position:relative;background:linear-gradient(135deg,var(--deep),var(--blue));color:#fff;text-decoration:none}
+.vp-art{position:absolute;right:-6%;top:50%;width:62%;transform:translateY(-50%);color:rgba(255,255,255,.16)}
+.vp-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:#fff;color:var(--deep);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .2s ease}
+.video-poster:hover .vp-play{transform:translate(-50%,-50%) scale(1.08)}
+.vp-title{position:absolute;left:18px;bottom:16px;right:18px;font-family:var(--display);font-weight:700;font-size:1.15rem}
+.video figcaption{font-size:.9rem;color:var(--muted)}
+.learn-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.learn-cards article{border-top:3px solid var(--blue);padding-top:12px;display:grid;gap:6px;align-content:start}
+.learn-cards h3{font-size:1.05rem}
+.learn-cards p{color:var(--muted);font-size:.95rem}
+.learn-foot{margin-top:28px;font-weight:600;max-width:62ch}
+@media (max-width:860px){.learn{grid-template-columns:1fr}}
+@media (max-width:480px){.learn-cards{grid-template-columns:1fr}}
 .cpts .txt{display:grid;gap:12px;max-width:62ch}
 .cpts h3{font-size:clamp(1.4rem,2.6vw,1.8rem);font-weight:800}
 .cpts-nums{display:grid;gap:14px;margin:0}
@@ -211,6 +229,7 @@ footer .legal{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255
         <li><a href="#rdv">Prendre RDV</a></li>
         <li><a href="#equipe">L’équipe</a></li>
         <li><a href="#actualites">Actualités</a></li>
+        <li><a href="#comprendre">C’est quoi une MSP ?</a></li>
         <li><a href="#maison">Notre maison</a></li>
         <li><a href="#infos">Infos pratiques</a></li>
         <li><a href="#medecin">Besoin d’un médecin ?</a></li>
@@ -410,8 +429,40 @@ footer .legal{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255
     </div>
   </section>
 
+  <!-- COMPRENDRE -->
+  <section id="comprendre">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Comprendre</p>
+        <h2>C’est quoi, une maison de santé pluriprofessionnelle ?</h2>
+        <p>Une MSP réunit des professionnels de santé libéraux de métiers différents (médecins, infirmiers, kinés, sages-femmes, podologues…) qui ont choisi de travailler en équipe autour d’un projet de santé commun, au plus près des besoins des habitants.</p>
+      </div>
+      <div class="learn">
+        <figure class="video">
+          <a class="video-poster" id="videoPoster" href="https://www.youtube.com/watch?v=typ_v4BaPTs" target="_blank" rel="noopener" aria-label="Lire la vidéo : les maisons de santé expliquées (YouTube)">
+            <svg class="vp-art" viewBox="-50 -50 100 100" aria-hidden="true">
+              <g><g class="fig"><circle cx="0" cy="-34" r="7.5" fill="currentColor"/><path d="M-16.85-14.14A22 22 0 0 1 16.85-14.14" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/></g></g>
+              <g transform="rotate(120)"><g class="fig"><circle cx="0" cy="-34" r="7.5" fill="currentColor"/><path d="M-16.85-14.14A22 22 0 0 1 16.85-14.14" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/></g></g>
+              <g transform="rotate(240)"><g class="fig"><circle cx="0" cy="-34" r="7.5" fill="currentColor"/><path d="M-16.85-14.14A22 22 0 0 1 16.85-14.14" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/></g></g>
+            </svg>
+            <span class="vp-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+            <span class="vp-title">Les maisons de santé expliquées en vidéo</span>
+          </a>
+          <figcaption>Vidéo réalisée par la <strong>FECOP</strong> (Fédération des soins primaires coordonnés), en lien avec <strong>France Assos Santé</strong>. <a href="https://www.youtube.com/watch?v=typ_v4BaPTs" target="_blank" rel="noopener">Voir sur YouTube ↗</a></figcaption>
+        </figure>
+        <div class="learn-cards">
+          <article><h3>Une équipe, pas des cabinets isolés</h3><p>Les professionnels se concertent régulièrement sur la situation des patients qu’ils suivent ensemble.</p></article>
+          <article><h3>Un projet de santé</h3><p>Écrit par l’équipe et reconnu par l’ARS, il fixe les actions menées pour la population du territoire.</p></article>
+          <article><h3>Un suivi coordonné</h3><p>Des protocoles partagés entre professionnels évitent les ruptures dans votre parcours de soins.</p></article>
+          <article><h3>Prévention et accès aux soins</h3><p>Actions de prévention ouvertes à tous, continuité des soins et accueil des étudiants en santé.</p></article>
+        </div>
+      </div>
+      <p class="learn-foot">Pour vous, cela veut dire un médecin, un infirmier ou un kiné qui se parlent, connaissent votre dossier et s’organisent pour vous suivre au mieux.</p>
+    </div>
+  </section>
+
   <!-- NOTRE MAISON -->
-  <section id="maison">
+  <section id="maison" class="band">
     <div class="wrap about">
       <div class="txt">
         <svg class="emblem" id="emblem" viewBox="-50 -50 100 100" role="img" aria-label="Trois professionnels qui se rejoignent : le travail en équipe">
@@ -466,7 +517,7 @@ footer .legal{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255
   </section>
 
   <!-- INFOS PRATIQUES -->
-  <section id="infos" class="band">
+  <section id="infos">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">Infos pratiques</p>
@@ -504,7 +555,7 @@ footer .legal{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255
   </section>
 
   <!-- BESOIN D'UN MEDECIN -->
-  <section id="medecin">
+  <section id="medecin" class="band">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">Besoin d’un médecin ?</p>
@@ -571,6 +622,19 @@ footer .legal{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255
   var b=document.getElementById('menuBtn'),n=document.getElementById('nav');
   b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
   n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+  // Vidéo : lecture intégrée sur le site public, lien YouTube sinon
+  var vp=document.getElementById('videoPoster');
+  if(/github\.io$/.test(location.hostname)||location.protocol==='file:'){
+    vp.addEventListener('click',function(e){
+      e.preventDefault();
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/typ_v4BaPTs?autoplay=1&rel=0';
+      f.title='Les maisons de santé expliquées en vidéo (FECOP)';
+      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen=true;
+      vp.replaceWith(f);
+    });
+  }
   function replay(el){el.classList.remove('play');void el.getBoundingClientRect();el.classList.add('play')}
   var em=document.getElementById('emblem'),mk=document.querySelector('.mark');
   em.addEventListener('click',function(){replay(em)});
